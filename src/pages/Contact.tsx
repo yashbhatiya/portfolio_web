@@ -7,7 +7,7 @@ import InteractiveCanvas from '@/components/InteractiveCanvas';
 import { ArrowRight } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
-const Contact = () => {
+const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,22 +22,62 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+
+    try {
+      const response = await fetch('/api/pagecontact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
 
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1500);
-  };
+      // Check if response is JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error(text || 'Received non-JSON response');
+      }
 
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Request failed with status ' + response.status);
+      }
+
+      toast({
+        title: "Message sent!",
+        description: data.message || "Thanks for reaching out. I'll get back to you soon.",
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+
+    } catch (error) {
+      console.error('Submission error:', error);
+      let errorMessage = 'Failed to send message';
+
+      if (error instanceof Error) {
+        errorMessage = error.message;
+        // Handle common error cases
+        if (errorMessage.includes('Failed to fetch')) {
+          errorMessage = 'Network error. Please check your connection.';
+        } else if (errorMessage.includes('Unexpected token')) {
+          errorMessage = 'Server error. Please try again later.';
+        }
+      }
+
+      toast({
+        title: "Error",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <>
       <CustomCursor />
@@ -173,4 +213,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactPage;

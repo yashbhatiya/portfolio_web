@@ -16,33 +16,103 @@ mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.error("MongoDB connection error:", err));
 
-// Contact Schema
+// Unified Contact Schema
 const contactSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    message: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now },
+    name: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    email: {
+        type: String,
+        required: true,
+        trim: true,
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email']
+    },
+    subject: {
+        type: String,
+        required: true,
+        enum: ['Project Inquiry', 'Collaboration', 'Job Opportunity', 'General Question', 'Other'],
+        default: 'General Question'
+    },
+    message: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
 });
 
+// Single Model for all contact forms
 const Contact = mongoose.model('Contact', contactSchema);
 
-// API Route
+// API Routes
 app.post('/contact', async (req, res) => {
     const { name, email, message } = req.body;
 
     try {
-        const newContact = new Contact({ name, email, message });
+        const newContact = new Contact({
+            name,
+            email,
+            message,
+            subject: 'General Question' // Default subject
+        });
+
         await newContact.save();
 
         res.status(201).json({
             success: true,
-            message: "Message sent successfully! I'll get back to you soon."
+            message: "Message sent successfully!"
         });
     } catch (err) {
         console.error("Error saving contact:", err);
+
+        let errorMessage = "Failed to send message. Please try again later.";
+        if (err.name === 'ValidationError') {
+            errorMessage = Object.values(err.errors).map(e => e.message).join(', ');
+        }
+
         res.status(500).json({
             success: false,
-            message: "Failed to send message. Please try again later."
+            message: errorMessage
+        });
+    }
+});
+
+app.post('/pagecontact', async (req, res) => {
+    const { name, email, subject, message } = req.body;
+
+    try {
+        // Validate subject
+        const validSubjects = ['Project Inquiry', 'Collaboration', 'Job Opportunity', 'General Question', 'Other'];
+        if (!validSubjects.includes(subject)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid subject selected"
+            });
+        }
+
+        const newContact = new Contact({ name, email, subject, message });
+        await newContact.save();
+
+        res.status(201).json({
+            success: true,
+            message: "Message sent successfully!"
+        });
+    } catch (err) {
+        console.error("Error saving contact:", err);
+
+        let errorMessage = "Failed to send message. Please try again later.";
+        if (err.name === 'ValidationError') {
+            errorMessage = Object.values(err.errors).map(e => e.message).join(', ');
+        }
+
+        res.status(500).json({
+            success: false,
+            message: errorMessage
         });
     }
 });
