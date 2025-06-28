@@ -28,7 +28,7 @@ const ContactPage = () => {
 
 
     try {
-      const response = await fetch('/api/pagecontact', {
+      const response = await fetch('https://portfolio-web-7a53.onrender.com/pagecontact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
