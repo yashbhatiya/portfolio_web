@@ -18,7 +18,7 @@ const projects = [
     description: 'Full website for a Computer Training center',
     category: 'Development',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800',
-    link: '/work/ecommerce-platform'
+    link: '/work/JayrajComputerWeb'
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const projects = [
     description: 'Monitoring system using object detection',
     category: 'Machine Learning',
     image: '/PersonDetection.jpeg',
-    link: '/work/mobile-app-ui'
+    link: '/work/Safety-Monitoring-YOLO'
   },
 ];
 

@@ -57,7 +57,7 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('api/contact', {
+      const response = await fetch('https://portfolio-web-7a53.onrender.com/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
