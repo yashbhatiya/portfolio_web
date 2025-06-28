@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     proxy: mode === 'development' ? {
       '/api': {
-        target: 'http://localhost:8000', // Your Express backend URL
+        target: 'https://portfolio-web-7a53.onrender.com/', // Your Express backend URL
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
