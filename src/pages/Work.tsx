@@ -13,7 +13,7 @@ const projects = [
     description: 'Intuitive interface design for spotify app',
     category: 'Design',
     image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800',
-    link: '/work/brand-redesign'
+    link: '/work/AccentureVI'
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const projects = [
     description: 'Full website for a Computer Training center',
     category: 'Development',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800',
-    link: '/work/ecommerce-platform'
+    link: '/work/JayrajComputerWeb'
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const projects = [
     description: 'Monitoring system using object detection',
     category: 'Machine Learning',
     image: '/PersonDetection.jpeg',
-    link: '/work/mobile-app-ui'
+    link: '/work/Safety-Monitoring-YOLO'
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const projects = [
     description: 'Creating Graphic design course for JCE',
     category: 'Design',
     image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800',
-    link: '/work/product-landing'
+    link: '/work/JCEGraphic-Design'
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const projects = [
     description: 'FPS Game based on Parul University using Unity Engine',
     category: 'Development',
     image: '/FPSGame.png',
-    link: '/work/blog-platform'
+    link: '/work/FPSGame'
   }
 ];
 

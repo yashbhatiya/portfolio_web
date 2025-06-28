@@ -6,11 +6,11 @@ import { ArrowRight } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'Spotify App UI',
-    description: 'Intuitive interface design for spotify app',
-    category: 'Design',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800',
-    link: '/work/brand-redesign'
+    title: '3D FPS Game Development',
+    description: 'FPS Game based on Parul University using Unity Engine',
+    category: 'Development',
+    image: '/FPSGame.png',
+    link: '/work/FPSGame'
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const projects = [
     title: 'Safety Monitoring using YOLO ',
     description: 'Monitoring system using object detection',
     category: 'Machine Learning',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800',
+    image: '/PersonDetection.jpeg',
     link: '/work/mobile-app-ui'
   },
 ];
