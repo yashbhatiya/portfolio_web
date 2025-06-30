@@ -11,11 +11,10 @@ const LoadingSpinner: React.FC = () => {
 
   const originalText = 'YASH BHATIYA';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*';
-  const speed = 50; // Scramble speed in ms
-  const revealDirection = 'center'; // Mimics Example 3 from the demo
+  const speed = 50;
+  const revealDirection = 'center';
 
   useEffect(() => {
-    // Start scrambling immediately
     let interval: NodeJS.Timeout;
     const availableChars = characters.split('');
 
@@ -66,19 +65,16 @@ const LoadingSpinner: React.FC = () => {
       }, speed);
     }
 
-    // Stop scrambling after 1.5 seconds
     const scrambleTimer = setTimeout(() => {
       setIsScrambling(false);
       setDisplayText(originalText);
-      setRevealedIndices(new Set(originalText.split('').map((_, i) => i))); // Reveal all
+      setRevealedIndices(new Set(originalText.split('').map((_, i) => i)));
     }, 1500);
 
-    // Start fade-out after 2 seconds (1.5s scrambling + 0.5s final text)
     const transitionTimer = setTimeout(() => {
       setTransitionOut(true);
-    }, 1000);
+    }, 2000);
 
-    // Remove spinner after 2.5 seconds (2s + 0.5s fade-out)
     const loadingTimer = setTimeout(() => {
       setIsLoading(false);
     }, 2500);
@@ -103,34 +99,20 @@ const LoadingSpinner: React.FC = () => {
     >
       <div className="relative">
         <div className="text-4xl md:text-6xl font-bold text-center">
-          <span
-            style={{ color: '#ffffff' }}
-            className={isScrambling ? 'text-muted-foreground' : 'text-primary'}
-            aria-hidden="true"
-          >
+          <span aria-hidden="true">
             {displayText.split('').map((char, index) => (
               <span
                 key={`${char}-${index}`}
-                className={revealedIndices.has(index) ? 'text-primary' : 'text-muted-foreground'}
+                className={cn(
+                  'transition-colors duration-300',
+                  revealedIndices.has(index) ? 'text-gray-400' : 'text-white'
+                )}
               >
                 {char}
               </span>
             ))}
           </span>
-          <span
-            style={{
-              position: 'absolute',
-              width: '1px',
-              height: '1px',
-              padding: 0,
-              margin: '-1px',
-              overflow: 'hidden',
-              clip: 'rect(0,0,0,0)',
-              border: 0,
-            }}
-          >
-            {originalText}
-          </span>
+          <span className="sr-only">{originalText}</span>
         </div>
       </div>
     </div>

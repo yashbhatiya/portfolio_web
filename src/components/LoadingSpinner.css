@@ -19,7 +19,7 @@
     stroke-linecap: round;
     /* Rounded ends for brush feel */
     stroke-linejoin: round;
-    animation: brush 0.9                    s ease-in-out forwards;
+    animation: brush 0.9 s ease-in-out forwards;
 }
 
 @keyframes brush {
