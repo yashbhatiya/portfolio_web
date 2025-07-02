@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-12">
             <div>
               <p className="text-muted-foreground mb-2">Email</p>
-              <a href="mailto:hello@portfolio.com" className="hover:underline">yashbhatiya265@gmail.com</a>
+              <a href="mailto:yashbhatiya265@gmail.com" className="hover:underline">yashbhatiya265@gmail.com</a>
             </div>
 
             <div>
@@ -40,9 +40,6 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Yash Bhatiya Portfolio. All rights reserved.
-          </p>
 
           <button
             onClick={scrollToTop}
