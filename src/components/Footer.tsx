@@ -39,17 +39,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
 
-          <button
-            onClick={scrollToTop}
-            className="group flex items-center text-sm hover:text-muted-foreground transition-colors"
-            aria-label="Back to top"
-          >
-            Back to top
-            <ArrowUp size={16} className="ml-2 transition-transform group-hover:-translate-y-1" />
-          </button>
-        </div>
       </div>
     </footer>
   );
