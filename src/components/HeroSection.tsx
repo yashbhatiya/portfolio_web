@@ -23,8 +23,21 @@ const HeroSection = () => {
             ML & Web Developer
           </h2>
 
+
+
           <button
-            onClick={() => alert('Button Clicked')}
+            onClick={() => {
+
+              const link = document.createElement('a');
+              link.href = 'public/Yash Bhatiya resume.pdf';
+              link.download = 'yash-bhatiya-resume.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }
+
+
+            }
             className="px-4 py-2  bg-black text-white rounded hover:bg-black transition" style={{ animationDelay: '2.8s' }}
           >
             Download CV

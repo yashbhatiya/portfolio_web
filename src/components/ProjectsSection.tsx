@@ -26,7 +26,7 @@ const projects = [
     description: 'Monitoring system using object detection',
     category: 'Machine Learning',
     image: '/PersonDetection.jpeg',
-    link: '/work/Safety-Monitoring-YOLO'
+    link: '/work/SafteyMonitoringLT'
   },
 ];
 
