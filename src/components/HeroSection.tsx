@@ -29,7 +29,7 @@ const HeroSection = () => {
             onClick={() => {
 
               const link = document.createElement('a');
-              link.href = 'public/Yash Bhatiya resume.pdf';
+              link.href = '/YashResume.pdf';
               link.download = 'yash-bhatiya-resume.pdf';
               document.body.appendChild(link);
               link.click();
