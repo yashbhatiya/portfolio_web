@@ -17,7 +17,7 @@ const projects = [
     title: 'Jayraj Computer Website',
     description: 'Full website for a Computer Training center',
     category: 'Development',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800',
+    image: 'public/JcEWEBsite.png',
     link: '/work/JayrajComputerWeb'
   },
   {
