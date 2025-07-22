@@ -36,7 +36,7 @@ const projects = [
     title: 'Graphic Design Course Development',
     description: 'Creating Graphic design course for JCE',
     category: 'Design',
-    image: '/JcEGraphicDesign.png',
+    image: '/GraphicJCE.png',
     link: '/work/JCEGraphic-Design'
   },
   {
