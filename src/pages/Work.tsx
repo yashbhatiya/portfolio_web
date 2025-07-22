@@ -12,7 +12,7 @@ const projects = [
     title: 'Spotify App UI',
     description: 'Intuitive interface design for spotify app',
     category: 'Design',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800',
+    image: '/FigmaSpotify.png',
     link: '/work/AccentureVI'
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     title: 'Graphic Design Course Development',
     description: 'Creating Graphic design course for JCE',
     category: 'Design',
-    image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800',
+    image: '/JcEGraphicDesign.png',
     link: '/work/JCEGraphic-Design'
   },
   {
@@ -46,6 +46,14 @@ const projects = [
     category: 'Development',
     image: '/FPSGame.png',
     link: '/work/FPSGame'
+  },
+  {
+    id: 6,
+    title: 'Keypoint Estimation for Excavator',
+    description: 'A pose estimation model to track excavator arm movements and estimate operational work.',
+    category: 'Machine Learning',
+    image: '/JCBPose.png',
+    link: '/work/JCBKeypoint'
   }
 ];
 

@@ -97,7 +97,7 @@ const AboutSection = () => {
                   <li className="flex flex-col">
                     <span>Technical Trainer</span>
                     <div className="flex gap-2 mt-1">
-                      <img src="public\Computer Trainner.png" alt="Teaching" className="h-6 w-6" />
+                      <img src="\Computer Trainner.png" alt="Teaching" className="h-6 w-6" />
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" className="h-6 w-6" />
                     </div>
                   </li>
