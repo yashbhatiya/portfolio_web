@@ -20,7 +20,7 @@ const projects = [
     title: 'Jayraj Computer Website',
     description: 'Full website for a Computer Training center',
     category: 'Development',
-    image: 'public/JcEWEBsite.png',
+    image: '/JcEWEBsite.png',
     link: '/work/JayrajComputerWeb'
   },
   {
