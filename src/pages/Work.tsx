@@ -21,7 +21,7 @@ const projects = [
     description: 'Full website for a Computer Training center',
     category: 'Development',
     image: '/JcEWEBsite.png',
-    link: '/work/JayrajComputerWeb'
+    link: 'https://www.jayrajcomputereducation.app/'
   },
   {
     id: 3,
