@@ -29,7 +29,7 @@ const HeroSection = () => {
             onClick={() => {
 
               const link = document.createElement('a');
-              link.href = '/YashResume.pdf';
+              link.href = 'https://beige-dolorita-65.tiiny.site/YashBhatiyaResume.pdf';
               link.download = 'yash-bhatiya-resume.pdf';
               document.body.appendChild(link);
               link.click();
