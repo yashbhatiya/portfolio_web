@@ -17,7 +17,7 @@ const SafetyDetection = (): ReactElement => {
     const metrics: MetricItem[] = [
         { value: '92%', label: 'Detection Accuracy' },
         { value: '30+', label: 'FPS Performance' },
-        { value: '1', label: 'Safety Classes Detected' },
+        { value: '5', label: 'Safety Classes Detected' },
         { value: '30s', label: 'Alert Response Time' }
     ];
 
@@ -133,8 +133,16 @@ const SafetyDetection = (): ReactElement => {
                                 </div>
                             ))}
                         </div>
+
+
+                    </div>
+                    <div className="mt-16 text-center">
+                        <a href="/work" className="text-center text-blue-500 hover:text-blue-700 underline">
+                            Return to Work
+                        </a>
                     </div>
                 </div>
+
             </div>
 
 
