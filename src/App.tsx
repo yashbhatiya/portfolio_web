@@ -9,6 +9,7 @@ import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import SafetyDetection from "./pages/work/Safety-Monitoring-YOLO";
+import FPSGamePage from './pages/work/FPSGamePage';
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/work" element={<Work />} />
           <Route path="/work/safety-monitoring-yolo" element={<SafetyDetection />} />
+          <Route path="/work/fps-game" element={<FPSGamePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

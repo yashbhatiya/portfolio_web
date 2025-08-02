@@ -18,7 +18,7 @@ const projects = [
     description: 'Full website for a Computer Training center',
     category: 'Development',
     image: '/JcEWEBsite.png',
-    link: '/work/JayrajComputerWeb'
+    link: 'https://www.jayrajcomputereducation.app/'
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const projects = [
     description: 'Monitoring system using object detection',
     category: 'Machine Learning',
     image: '/PersonDetection.jpeg',
-    link: '/work/SafteyMonitoringLT'
+    link: '/work/safety-monitoring-yolo'
   },
 ];
 

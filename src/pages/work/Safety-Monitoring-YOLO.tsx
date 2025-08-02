@@ -34,9 +34,7 @@ const SafetyDetection = (): ReactElement => {
 
     return (
         <>
-            <CustomCursor />
-            <InteractiveCanvas />
-            <Header />
+
             <div className="min-h-screen bg-secondary/50">
                 <nav className="px-6 md:px-12 lg:px-24 py-8">
                     <Link
@@ -47,6 +45,8 @@ const SafetyDetection = (): ReactElement => {
                         Back to Works
                     </Link>
                 </nav>
+                <CustomCursor />
+                <InteractiveCanvas />
 
                 {/* Full-width landscape image with gradient overlay */}
                 <div className="relative w-full h-[50vh] min-h-[400px] overflow-hidden">
