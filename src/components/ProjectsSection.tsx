@@ -10,7 +10,7 @@ const projects = [
     description: 'FPS Game based on Parul University using Unity Engine',
     category: 'Development',
     image: '/FPSGame.png',
-    link: '/work/FPSGame'
+    link: '/work/fps-game'
   },
   {
     id: 2,
