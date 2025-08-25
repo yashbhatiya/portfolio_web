@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import SafetyDetection from "./pages/work/Safety-Monitoring-YOLO";
 import FPSGamePage from './pages/work/FPSGamePage';
+import VideoPortfolioPage from './pages/work/VideoEditing';
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/work" element={<Work />} />
           <Route path="/work/safety-monitoring-yolo" element={<SafetyDetection />} />
           <Route path="/work/fps-game" element={<FPSGamePage />} />
+          <Route path="/work/VideoEditing" element={<VideoPortfolioPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

@@ -54,6 +54,14 @@ const projects = [
     category: 'Machine Learning',
     image: '/JCBPose.png',
     link: '/work/JCBKeypoint'
+  },
+  {
+    id: 7,
+    title: 'Video Editing Portfolio',
+    description: 'Video editing and post-production showcase',
+    category: 'Design',
+    image: '/VideoEditing.jpg',
+    link: '/work/VideoEditing'
   }
 ];
 
