@@ -25,19 +25,19 @@ const Index = () => {
   return (
     <>
       <LoadingSpinner />
-      
+
       <div className={`transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
         <CustomCursor />
         <InteractiveCanvas />
         <Header />
-        
+
         <main>
           <HeroSection />
           <ProjectsSection />
           <AboutSection />
           <ContactSection />
         </main>
-        
+
         <Footer />
       </div>
     </>

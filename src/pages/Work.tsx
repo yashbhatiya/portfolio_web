@@ -21,6 +21,7 @@ const projects = [
     description: 'Full website for a Computer Training center',
     category: 'Development',
     image: '/JcEWEBsite.png',
+    openInNewTab: true,
     link: 'https://www.jayrajcomputereducation.app/'
   },
   {
@@ -122,7 +123,12 @@ const Work = () => {
                 <h3 className="text-2xl font-medium mt-2 mb-4">{project.title}</h3>
                 <p className="text-muted-foreground mb-6">{project.description}</p>
 
-                <a href={project.link} className="group inline-flex items-center text-foreground font-medium">
+                <a
+                  href={project.link}
+                  target={project.openInNewTab ? '_blank' : '_self'}
+                  rel={project.openInNewTab ? 'noopener noreferrer' : undefined}
+                  className="group inline-flex items-center text-foreground font-medium"
+                >
                   View Project
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
